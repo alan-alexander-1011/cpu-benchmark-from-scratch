@@ -4,7 +4,7 @@ a cpu benchmark that is made from scratch in python.
 ## How to use:
 
 for pi calculator pi stress test:
->>>install newest python with PATH included or not included if you like.\
+>install newest python with PATH included or not included if you like.\
   open your terminal, go to the location that contains the python file\
   if PATH included. run **`pip install -r requirements.txt`**\
   but if not PATH included, run **`python -m pip install -r requirements.txt`**\
