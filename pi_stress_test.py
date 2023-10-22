@@ -9,8 +9,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--iterations", type=int, default=4, help="number of iterations")
 parser.add_argument('-p', "--precision", type=int, default=7, help="precision of decimal point")
 
-level = parser.iterations
-precision_multiplier = parser.precision
+args = parser.parse_args()
+
+level = args.iterations
+precision_multiplier = args.precision
 
 getcontext().prec = 10**precision_multiplier 
 def calculate_pi(start, end) -> Decimal:
