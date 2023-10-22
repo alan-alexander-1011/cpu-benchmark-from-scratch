@@ -8,14 +8,19 @@ import psutil
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--iterations", type=int, default=4, help="number of iterations")
 parser.add_argument('-p', "--precision", type=int, default=7, help="precision of decimal point")
+parser.add_argument('-t', "--threads", type=int, default=40, help="number of threads")
 
 args = parser.parse_args()
 
 level = args.iterations
+if level <= 1: print("num of iterations cant be smaller than 2")
+
 precision_multiplier = args.precision
+no_threads = args.threads
 
 getcontext().prec = 10**precision_multiplier 
 def calculate_pi(start, end) -> Decimal:
+    #Chudnovski's algorithm
     getcontext().prec = 100  # Set the precision to desired value
     pi = Decimal(0)
     for k in range(start, end):
@@ -50,7 +55,7 @@ if __name__ == '__main__':
     try:
         multiprocessing.freeze_support()
         start = round(time.time(), 2)
-        calculate_pi_with_threads(61, level)
+        calculate_pi_with_threads(no_threads, level)
         end = round(time.time(), 2)
         print(f"Elapsed time: {end - start}\nScore (1000000 / elapsed time): {score(end - start)}")
     except KeyboardInterrupt:
