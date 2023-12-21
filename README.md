@@ -12,4 +12,4 @@ for pi calculator pi stress test:
   just run the files you want, the addtional.py file is REQUIRED.
 
 My CPU i5-12500H score: 1014 (with 10**7 decimal precision or level 7 precision multiplier, 4 iterations multiplier, 61 processes.)\
-this is a stress test so its based on time, the score system is 1000000 / elapsed time
+this is a stress test so its based on time, the score system is 1000000 / elapsed time (the pi calculator benchmark one)
